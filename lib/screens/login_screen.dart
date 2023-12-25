@@ -49,18 +49,20 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 64,
             ),
-            /* TextFieldInput(
+            TextFieldInput(
+              //ctx: context,
               hintText: 'Enter your Email',
               textEditingController: _emailController,
               textInputType: TextInputType.emailAddress,
             ),
+
             //texfield input for password
             TextFieldInput(
               hintText: 'Enter your Password',
               textEditingController: _passwordController,
               textInputType: TextInputType.text,
               //isPass: true,
-            ),*/
+            ),
             //button login
             //transitioning to sign up
           ],
