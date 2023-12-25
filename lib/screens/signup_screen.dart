@@ -5,22 +5,29 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../utils/colors.dart';
 import '../widgets/text_field_input.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
+  final TextEditingController _bioController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  //double heightBtwInput = 14;
+  final spaceBtwInput = const SizedBox(
+    height: 14,
+  );
   @override
   void dispose() {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    _bioController.dispose();
+    _usernameController.dispose();
   }
 
   @override
@@ -46,18 +53,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 64,
               ),
 
-              //textfield input for email
               const SizedBox(
                 height: 64,
               ),
+
+              //textfield input for username
+              TextFieldInput(
+                hintText: 'Enter your Username',
+                textEditingController: _usernameController,
+                textInputType: TextInputType.text,
+              ),
+              spaceBtwInput,
+
+              //textfield input for email
               TextFieldInput(
                 hintText: 'Enter your Email',
                 textEditingController: _emailController,
                 textInputType: TextInputType.emailAddress,
               ),
-              const SizedBox(
-                height: 14,
-              ),
+              spaceBtwInput,
               //texfield input for password
               TextFieldInput(
                 hintText: 'Enter your Password',
@@ -65,9 +79,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputType: TextInputType.text,
                 isPass: true,
               ),
-              const SizedBox(
-                height: 14,
+              spaceBtwInput,
+              //textfield input for username
+              TextFieldInput(
+                hintText: 'Enter your Bio',
+                textEditingController: _bioController,
+                textInputType: TextInputType.text,
               ),
+              spaceBtwInput,
               //button login
               InkWell(
                 child: Container(
