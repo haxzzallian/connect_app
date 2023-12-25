@@ -18,20 +18,18 @@ class TextFieldInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final inputBorder =
         OutlineInputBorder(borderSide: Divider.createBorderSide(context));
-    return Card(
-      child: TextField(
-        controller: textEditingController,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: inputBorder,
-          focusedBorder: inputBorder,
-          enabledBorder: inputBorder,
-          filled: true,
-          contentPadding: const EdgeInsets.all(3),
-        ),
-        keyboardType: textInputType,
-        obscureText: isPass,
+    return TextField(
+      controller: textEditingController,
+      decoration: InputDecoration(
+        hintText: hintText,
+        border: inputBorder,
+        focusedBorder: inputBorder,
+        enabledBorder: inputBorder,
+        filled: true,
+        contentPadding: const EdgeInsets.all(3),
       ),
+      keyboardType: textInputType,
+      obscureText: isPass,
     );
   }
 }
