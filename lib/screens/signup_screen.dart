@@ -56,6 +56,27 @@ class _SignupScreenState extends State<SignupScreen> {
               const SizedBox(
                 height: 64,
               ),
+              //circular widget to show selected file
+              Stack(
+                children: [
+                  const CircleAvatar(
+                    radius: 64,
+                    backgroundImage: NetworkImage(
+                        'https://www.kwaralefro.com/wp-content/uploads/2023/12/portable-knocked-out-charles-okocha.jpeg'),
+                  ),
+                  Positioned(
+                    bottom: -10,
+                    left: 80,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.add_a_photo),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 24,
+              ),
 
               //textfield input for username
               TextFieldInput(
