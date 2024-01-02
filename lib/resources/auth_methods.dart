@@ -55,6 +55,12 @@ class AuthMethods {
         }); */
         res = 'success';
       }
+    } on FirebaseAuthException catch (err) {
+      if (err.code == 'invalid-email') {
+        res = 'The Email is badly Formatted';
+      } else if (err.code == 'weak-password') {
+        res = 'The password is weak, should be at least 6 characters';
+      }
     } catch (err) {
       res = err.toString();
     }
